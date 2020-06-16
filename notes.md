@@ -4,7 +4,7 @@
 
 Users:
 
-- [ ] Has username
+- [ ] Has Username
 - [ ] Has First name
 - [ ] Has Last name
 - [ ] Has Admin toggle
