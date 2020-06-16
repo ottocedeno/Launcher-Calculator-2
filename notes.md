@@ -4,9 +4,9 @@
 
 Users:
 
-- [ ] Has Username
-- [ ] Has First name
-- [ ] Has Last name
-- [ ] Has Admin toggle
-- [ ] Has Password Encryption
+- [x] Has Username
+- [x] Has First name
+- [x] Has Last name
+- [x] Has Admin toggle
+- [x] Has Password Encryption
 - [ ] Can sign in with GitHub
