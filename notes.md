@@ -13,19 +13,21 @@ Users:
 
 Rockets:
 
-- [ ] Has a name
-- [ ] Quick Description
-- [ ] Project: Boolean, default = false
-- [ ] 1st stage fuel
-- [ ] 1st stage cycle
-- [ ] 2nd stage fuel
-- [ ] 2nd stage cycle
-- [ ] 3rd stage fuel, default = false
-- [ ] 3rd stage cycle, default = false
+- [x] Has a name
+- [x] Quick Description
+- [x] Project: Boolean, default = false
+- [x] 1st stage fuel
+- [x] 1st stage cycle
+- [x] 2nd stage fuel
+- [x] 2nd stage cycle
+- [x] 3rd stage fuel, default = false
+- [x] 3rd stage cycle, default = false
 
-- [ ] #stages => counts stages and returns count
+- [x] #stages => counts stages and returns count
+- [ ] #lift_off_mass => adds all weight
+
 - [ ] Thrust-to-weight ratio: float
-- [ ] lift-off mass: integer
+- [ ] lift-off mass: integer (!!Need to ask Igor about this)
 - [ ] Rocket mass: integer
 - [ ] Max Rocket Body Diameter: float
 - [ ] Fairing mass: integer

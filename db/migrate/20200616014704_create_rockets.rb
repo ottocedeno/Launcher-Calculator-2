@@ -11,7 +11,6 @@ class CreateRockets < ActiveRecord::Migration[6.0]
       t.string :third_stage_fuel
       t.string :third_stage_cycle
       t.float :thrust_to_weight_ratio
-      t.integer :lift_off_mass
       t.integer :rocket_mass
       t.float :max_rocket_body_diameter
       t.integer :fairing_mass
