@@ -33,7 +33,19 @@ saturn_five = {
   fairing_mass: 8000,
   assumed_payload_mass: 48600,
   second_stage_to_lift_off_mass_ratio: 21.284,
-  transfer_orbit_stage_to_lift_off_mass_ratio: 4.228
+  transfer_orbit_stage_to_lift_off_mass_ratio: 4.228,
+
+  first_stage_dry_to_wet_mass_ratio: 5.677,
+  second_stage_try_to_wet_mass_ratio: 8.081,
+  transfer_orbit_stage_dry_to_wet_mass_ratio: 10.976,
+  first_stage_unused_propellant: 2.6,
+  second_stage_unused_propellant: 2.0,
+  transfer_orbit_stage_unused_propellant: 2.0,
+  first_stage_isp: 263,
+  first_stage_isp_vacuum: 304,
+  second_stage_isp: 421,
+  transfer_orbit_stage_isp: 421,
+  specific_impulse_variation: 100.0
 }
 
 Rocket.create(saturn_five)
