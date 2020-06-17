@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_014704) do
+ActiveRecord::Schema.define(version: 2020_06_17_022024) do
 
   create_table "rockets", force: :cascade do |t|
     t.string "name"
@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(version: 2020_06_16_014704) do
     t.integer "second_stage_isp"
     t.integer "transfer_orbit_stage_isp"
     t.float "specific_impulse_variation"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "spaceports", force: :cascade do |t|
+    t.string "name"
+    t.boolean "air_launch", default: false
+    t.float "launch_point_altitude"
+    t.float "spaceport_latitude"
+    t.float "launch_azimuth"
+    t.float "earth_rotation_velocity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

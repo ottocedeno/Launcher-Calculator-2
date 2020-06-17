@@ -49,3 +49,14 @@ saturn_five = {
 }
 
 Rocket.create(saturn_five)
+
+cape_canaveral = {
+  name: "Cape Canaveral",
+  air_launch: false,
+  launch_point_altitude: 0.1,
+  spaceport_latitude: 28.5,
+  launch_azimuth: 90.00,
+  earth_rotation_velocity: 408.6
+}
+
+Spaceport.create(cape_canaveral)

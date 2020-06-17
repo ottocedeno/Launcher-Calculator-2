@@ -24,24 +24,23 @@ Rockets:
 - [x] 3rd stage cycle, default = false
 
 - [x] #stages => counts stages and returns count
-- [ ] #lift_off_mass => adds all weight
+- [x] #lift_off_mass => adds all weight (!!Need to ask Igor about this)
 
-- [ ] Thrust-to-weight ratio: float
-- [ ] lift-off mass: integer (!!Need to ask Igor about this)
-- [ ] Rocket mass: integer
-- [ ] Max Rocket Body Diameter: float
-- [ ] Fairing mass: integer
-- [ ] Assumed payload mass: integer
-- [ ] 2nd stage to lift-off mass ratio: float
-- [ ] Transfer Orbit stage to lift-off mass ratio: float
-- [ ] 1st stage Dry to Wet mass ratio: float
-- [ ] 2nd stage Dry to Wet mass ratio: float
-- [ ] Transfer Orbit stage Dry to Wet mass ratio: float
-- [ ] Unused propellant of 1st stage: float
-- [ ] Unused propellant of 2nd stage: float
-- [ ] Unused propellant Transfer Orbit stage: float
-- [ ] 1st stage Isp sea level or at the start altitude: integer
-- [ ] 1st stage Isp vacuum: integer
-- [ ] 2nd stage Isp: integer
-- [ ] Transfer Orbit stage Isp: integer
-- [ ] Specific Impulse variation: float
+- [x] Thrust-to-weight ratio: float
+- [x] Rocket mass: integer
+- [x] Max Rocket Body Diameter: float
+- [x] Fairing mass: integer
+- [x] Assumed payload mass: integer
+- [x] 2nd stage to lift-off mass ratio: float
+- [x] Transfer Orbit stage to lift-off mass ratio: float
+- [x] 1st stage Dry to Wet mass ratio: float
+- [x] 2nd stage Dry to Wet mass ratio: float
+- [x] Transfer Orbit stage Dry to Wet mass ratio: float
+- [x] Unused propellant of 1st stage: float
+- [x] Unused propellant of 2nd stage: float
+- [x] Unused propellant Transfer Orbit stage: float
+- [x] 1st stage Isp sea level or at the start altitude: integer
+- [x] 1st stage Isp vacuum: integer
+- [x] 2nd stage Isp: integer
+- [x] Transfer Orbit stage Isp: integer
+- [x] Specific Impulse variation: float

@@ -1,0 +1,2 @@
+class Spaceport < ApplicationRecord
+end
