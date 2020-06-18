@@ -60,3 +60,16 @@ cape_canaveral = {
 }
 
 Spaceport.create(cape_canaveral)
+
+leo = {
+  name: "LEO",
+  quick_description: "Low Earth Orbit",
+  orbit_perigee: 200,
+  orbit_apogee: 0,
+  orbit_inclination: 28.5,
+  orbital_period: 88.35,
+  delta_v: 7622.3,
+  extra_velocity_to_planets: 0
+}
+
+Orbit.create(leo)

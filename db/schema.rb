@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_17_022024) do
+ActiveRecord::Schema.define(version: 2020_06_18_030028) do
+
+  create_table "orbits", force: :cascade do |t|
+    t.string "name"
+    t.string "quick_description"
+    t.integer "orbit_perigee"
+    t.integer "orbit_apogee"
+    t.float "orbit_inclination"
+    t.float "orbital_period"
+    t.float "delta_v"
+    t.integer "extra_velocity_to_planets"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "rockets", force: :cascade do |t|
     t.string "name"
