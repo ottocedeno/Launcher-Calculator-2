@@ -6,7 +6,6 @@ class CreateMissions < ActiveRecord::Migration[6.0]
       t.integer :rocket_id
       t.integer :spaceport_id
       t.integer :orbit_id
-      t.integer :mission_result_id
 
       t.timestamps
     end
