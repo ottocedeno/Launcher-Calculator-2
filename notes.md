@@ -9,6 +9,7 @@ Users:
 - [x] Has Last name
 - [x] Has Admin toggle
 - [x] Has Password Encryption
+- [x] Has many missions
 - [ ] Can sign in with GitHub
 
 Rockets:
@@ -44,3 +45,45 @@ Rockets:
 - [x] 2nd stage Isp: integer
 - [x] Transfer Orbit stage Isp: integer
 - [x] Specific Impulse variation: float
+- [x] has many missions
+
+Spaceport:
+
+- [x] Has a name
+- [x] Air launch option: Boolean, default: false
+- [x] Launch point altitude
+- [x] #additional_velocity
+- [x] Spaceport Latitude
+- [x] Launch Azimuth
+- [x] Earth rotation velocity
+- [x] has many missions
+
+Orbit:
+
+- [x] Has a name
+- [x] Has a Quick Description
+- [x] Orbit Perigee
+- [x] Orbit Apogee
+- [x] Orbit Inclination
+- [x] Orbital Period
+- [x] Delta-V
+- [x] extra_velocity_to_planets
+- [x] has many missions
+
+Mission:
+
+- [x] Has a name
+- [x] belongs to a user
+- [x] belongs to a rocket
+- [x] belongs to a spaceport
+- [x] belongs to an orbit
+- [x] has one mission_result
+
+Mission Result:
+
+- [x] belongs to a mission
+- [x] Success: boolean
+- [x] Payload Mass
+- [x] Payload to Lift-off mass ratio
+- [x] Payload change
+- [x] Aggression Index

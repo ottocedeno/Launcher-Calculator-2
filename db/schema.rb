@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_18_030028) do
+ActiveRecord::Schema.define(version: 2020_06_20_015932) do
+
+  create_table "mission_results", force: :cascade do |t|
+    t.integer "mission_id"
+    t.boolean "success"
+    t.integer "payload_mass"
+    t.float "payload_to_lift_off_mass_ratio"
+    t.float "payload_change"
+    t.float "aggression_index"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "missions", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id"
+    t.integer "rocket_id"
+    t.integer "spaceport_id"
+    t.integer "orbit_id"
+    t.integer "mission_result_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "orbits", force: :cascade do |t|
     t.string "name"

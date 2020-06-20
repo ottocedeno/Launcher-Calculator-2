@@ -13,7 +13,6 @@ otto = {
   password: 'donkey',
   admin: true
 }
-User.create(otto)
 
 saturn_five = {
   name: "NASA Saturn V",
@@ -48,8 +47,6 @@ saturn_five = {
   specific_impulse_variation: 100.0
 }
 
-Rocket.create(saturn_five)
-
 cape_canaveral = {
   name: "Cape Canaveral",
   air_launch: false,
@@ -58,8 +55,6 @@ cape_canaveral = {
   launch_azimuth: 90.00,
   earth_rotation_velocity: 408.6
 }
-
-Spaceport.create(cape_canaveral)
 
 leo = {
   name: "LEO",
@@ -72,4 +67,16 @@ leo = {
   extra_velocity_to_planets: 0
 }
 
-Orbit.create(leo)
+user = User.create(otto)
+rocket = Rocket.create(saturn_five)
+spaceport = Spaceport.create(cape_canaveral)
+orbit = Orbit.create(leo)
+
+mission = Mission.create(
+  name: "Pre test flight",
+  user: user,
+  rocket: rocket,
+  spaceport: spaceport,
+  orbit: orbit,
+  mission_result: MissionResult.new
+)
