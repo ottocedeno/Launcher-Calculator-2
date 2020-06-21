@@ -17,8 +17,8 @@
     
     <%# Error Alert if failed login attempt %>
     <% if @user.errors.any? %>
-      <% @user.errors.messages.each do |error, message| %>
-        <%= content_tag(:div, message.first, class: "alert alert-danger") %>
+      <% @user.errors.full_messages.each do |message| %>
+        <%= content_tag(:div, message, class: "alert alert-danger") %>
       <% end %>
     <% end %>
 

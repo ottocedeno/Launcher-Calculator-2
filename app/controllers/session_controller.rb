@@ -19,6 +19,6 @@ class SessionController < ApplicationController
   private
   def login_error
     set_user
-    @user.errors.add(:login_credentials, "Username and Password do not match")
+    @user.errors.add(:login_error, "Username and Password do not match")
   end
 end
