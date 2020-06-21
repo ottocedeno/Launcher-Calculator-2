@@ -10,7 +10,6 @@ Users:
 - [x] Has Admin toggle
 - [x] Has Password Encryption
 - [x] Has many missions
-- [ ] Can sign in with GitHub
 
 Rockets:
 
@@ -87,3 +86,15 @@ Mission Result:
 - [x] Payload to Lift-off mass ratio
 - [x] Payload change
 - [x] Aggression Index
+
+## Login / Sign Up Flow
+
+Login
+
+- [x] /login responds with 200 status
+- [x] /login routes to session controller
+- [x] Can sign in with an existing UN / PW
+- [x] session is set
+- [x] if pw not authenticated, re-render login form
+
+- [ ] Can sign in with GitHub
