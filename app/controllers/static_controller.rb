@@ -1,5 +1,5 @@
 class StaticController < ApplicationController
   def home
-    raise session[:user_id].inspect
+    @user = User.find(session[:user_id])
   end
 end

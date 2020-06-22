@@ -8,11 +8,9 @@
   </h3>
 
   <%# Login Card %>
-  <div class="my-5 w-50 mx-auto shadow-lg p-5 bg-white rounded">
+  <div class="my-5 w-50 mx-auto shadow-sm p-5 bg-white rounded-lg border border-light">
     <%# Sign in Via Github %>
-    <button class="btn btn-primary btn-block" type="submit">
-      Log in with GitHub
-    </button>
+    <%= link_to 'Log in with GitHub', '/auth/github', class: "btn btn-primary btn-block" %>
     <p class="my-3 text-muted">OR</p>
     
     <%# Error Alert if failed login attempt %>
@@ -23,7 +21,7 @@
     <% end %>
 
     <%# Sign in Form %>
-    <%= form_for(@user, url: {controller: "session", action: "create"}) do |f| %>
+    <%= form_for(@user, url: {controller: "sessions", action: "create"}) do |f| %>
       <div class="form-group">
         <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
       </div>
