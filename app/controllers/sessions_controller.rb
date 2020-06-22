@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
     @user.errors.add(:login_error, "Username and Password do not match")
   end
 
-  #-----Github Login Flow Private Methods-----
+  #-----Github Login Flow Private Methods-----#
   def auth
     request.env['omniauth.auth']
   end
