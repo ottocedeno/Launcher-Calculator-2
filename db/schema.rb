@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2020_06_20_015932) do
     t.integer "rocket_id"
     t.integer "spaceport_id"
     t.integer "orbit_id"
-    t.integer "mission_result_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -94,6 +93,7 @@ ActiveRecord::Schema.define(version: 2020_06_20_015932) do
     t.string "username"
     t.string "first_name"
     t.string "last_name"
+    t.string "uid"
     t.boolean "admin"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
