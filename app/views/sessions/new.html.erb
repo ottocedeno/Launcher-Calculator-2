@@ -1,16 +1,12 @@
 <div class="container-md text-center p-5">
 
   <%# Header Intro %>
-  <%= content_tag(:h1, "Launcher Calculator", class: "m-3 font-weight-bold display-3") %>
-  <h3 class="font-weight-light">
-    An open source orbital launch vehicle payload calculator by
-    <a href="https://launcherspace.com">Launcher</a>
-  </h3>
+  <%= render 'welcome_header' %>
 
   <%# Login Card %>
   <div class="my-5 w-50 mx-auto shadow-sm p-5 bg-white rounded-lg border border-light">
-    <%# Sign in Via Github %>
-    <%= link_to 'Log in with GitHub', '/auth/github', class: "btn btn-primary btn-block" %>
+    <%# Login Via Github %>
+    <%= link_to 'Login with GitHub', '/auth/github', class: "btn btn-primary btn-block" %>
     <p class="my-3 text-muted">OR</p>
     
     <%# Error Alert if failed login attempt %>
@@ -20,7 +16,7 @@
       <% end %>
     <% end %>
 
-    <%# Sign in Form %>
+    <%# Login Form %>
     <%= form_for(@user, url: {controller: "sessions", action: "create"}) do |f| %>
       <div class="form-group">
         <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
@@ -28,7 +24,7 @@
       <div class="form-group">
         <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
       </div>
-      <%= f.submit "Log In", class: "btn btn-outline-primary btn-block" %>
+      <%= f.submit "Login", class: "btn btn-outline-primary btn-block" %>
     <% end %>
   </div>
 
