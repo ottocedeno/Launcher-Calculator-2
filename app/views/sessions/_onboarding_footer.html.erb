@@ -1,0 +1,13 @@
+<% if request.original_fullpath == login_path %>
+  <p class="text-muted">
+    Don't have an account?
+    <%= link_to "Sign Up", signup_path, class: "ml-2 btn btn-outline-secondary btn-sm" %>
+  </p>
+  <p class="text-muted">Beta Version 1.0</p>
+<% elsif request.original_fullpath == signup_path %>
+  <p class="text-muted">
+    Already have an account?
+    <%= link_to "Login", login_path, class: "ml-2 btn btn-outline-secondary btn-sm" %>
+  </p>
+  <p class="text-muted">Beta Version 1.0</p>
+<% end %>

@@ -1,33 +1,20 @@
 <div class="container-md text-center p-5">
-
   <%# Header Intro %>
   <%= render 'welcome_header' %>
 
   <%# Login Card %>
-  <div class="my-5 w-50 mx-auto shadow-sm p-5 bg-white rounded-lg border border-light">
+  <div class="mt-5 mb-4 w-50 mx-auto shadow-sm p-5 bg-white rounded-lg border border-light">
     <%# Login Via Github %>
     <%= link_to 'Login with GitHub', '/auth/github', class: "btn btn-primary btn-block" %>
     <p class="my-3 text-muted">OR</p>
     
     <%# Load Errors Partial %>
-      <%= render partial: 'form_errors', locals: {object: @user} %>
-
+    <%= render partial: 'form_errors', locals: {object: @user} %>
+    
     <%# Login Form %>
-    <%= form_for(@user, url: {controller: "sessions", action: "create"}) do |f| %>
-      <div class="form-group">
-        <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
-      </div>
-      <%= f.submit "Login", class: "btn btn-outline-primary btn-block" %>
-    <% end %>
+    <%= render partial: 'login_form', locals: {user: @user} %>
   </div>
 
   <%# Section Footer %>
-  <p class="text-muted">
-    Don't have an account?
-    <%= link_to "Sign Up", signup_path, class: "ml-2 btn btn-outline-secondary btn-sm" %>
-  </p>
-  <p class="text-muted">Beta Version 1.0</p>
+  <%= render partial: 'onboarding_footer' %>
 </div>

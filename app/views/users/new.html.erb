@@ -3,44 +3,18 @@
   <%= render 'sessions/welcome_header' %>
   
   <%# Sign up Card %>
-  <div class="my-5 w-50 mx-auto shadow-sm p-5 bg-white rounded-lg border border-light">
+  <div class="mt-5 mb-4 w-50 mx-auto shadow-sm p-5 bg-white rounded-lg border border-light">
 
     <%# Sign up Via Github %> 
     <%= link_to 'Sign Up with GitHub', '/auth/github', class: "btn btn-primary btn-block" %>
     <p class="my-3 text-muted">OR</p>
 
     <%# New User Sign Up Form %>
-    <%= form_for(@user) do |f| %>
-      <p>Create an Account</p>
-
-      <%# Load Errors Partial %>
-      <%= render partial: 'sessions/form_errors.html.erb', locals: {object: @user} %>
-
-      <div class="form-group">
-        <%= f.text_field :username, placeholder: "Username", class: "form-control"%>
-      </div>
-
-      <div class="form-group">
-        <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
-      </div>
-      <%= f.submit "Create Account", class: "btn btn-outline-primary btn-block" %>
-    <% end %>
+    <%= render partial: 'signup_form', locals: {user: @user} %>
   </div>
 
   <%# Section Footer %>
-  <p class="text-muted">
-    Already have an account?
-    <%= link_to "Login", login_path, class: "ml-2 btn btn-outline-secondary btn-sm" %>
-  </p>
-  <p class="text-muted">Beta Version 1.0</p>
+  <%= render partial: 'sessions/onboarding_footer' %>
 </div>
 
   
