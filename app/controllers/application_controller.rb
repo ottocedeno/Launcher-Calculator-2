@@ -8,10 +8,10 @@ class ApplicationController < ActionController::Base
     @user = User.new
   end
 
-  def redirect_home
+  def redirect_home_if_logged_in
     redirect_to root_path if user_is_authenticated
   end
-  
+
   def require_login
     redirect_to login_path unless user_is_authenticated
   end
