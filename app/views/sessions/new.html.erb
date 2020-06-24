@@ -9,12 +9,8 @@
     <%= link_to 'Login with GitHub', '/auth/github', class: "btn btn-primary btn-block" %>
     <p class="my-3 text-muted">OR</p>
     
-    <%# Error Alert if failed login attempt %>
-    <% if @user.errors.any? %>
-      <% @user.errors.full_messages.each do |message| %>
-        <%= content_tag(:div, message, class: "alert alert-danger") %>
-      <% end %>
-    <% end %>
+    <%# Load Errors Partial %>
+      <%= render partial: 'form_errors', locals: {object: @user} %>
 
     <%# Login Form %>
     <%= form_for(@user, url: {controller: "sessions", action: "create"}) do |f| %>

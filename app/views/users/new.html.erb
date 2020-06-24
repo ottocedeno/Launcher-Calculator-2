@@ -12,6 +12,10 @@
     <%# New User Sign Up Form %>
     <%= form_for(@user) do |f| %>
       <p>Create an Account</p>
+
+      <%# Load Errors Partial %>
+      <%= render partial: 'sessions/form_errors.html.erb', locals: {object: @user} %>
+
       <div class="form-group">
         <%= f.text_field :username, placeholder: "Username", class: "form-control"%>
       </div>
