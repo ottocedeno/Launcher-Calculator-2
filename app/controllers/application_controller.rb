@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :verified_user
+  before_action :require_login
   helper_method :current_user
 
   private
@@ -8,8 +8,12 @@ class ApplicationController < ActionController::Base
     @user = User.new
   end
 
-  def verified_user
-    redirect_to '/login' unless user_is_authenticated
+  def redirect_home
+    redirect_to root_path if user_is_authenticated
+  end
+  
+  def require_login
+    redirect_to login_path unless user_is_authenticated
   end
 
   def user_is_authenticated
