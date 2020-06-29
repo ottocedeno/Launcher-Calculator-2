@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   before_action :redirect_home_if_logged_in, only: [:new]
   
   def new
+    render layout: 'onboarding'
   end
 
   def create
