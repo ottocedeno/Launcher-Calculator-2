@@ -4,7 +4,7 @@
   <p><strong>Note:</strong> during our beta program, only <span class="text-info">admins</span> will have the ability to create new conceptual rockets or edit existing ones.</p>
   <div class="mt-5 mb-4">
     <h3>Available Rockets
-      <%= link_to 'Create New Rocket', '/', class: 'btn btn-outline-info btn-sm ml-3' if current_user.admin %>
+      <%= link_to 'Create New Rocket', new_admin_rocket_path, class: 'btn btn-outline-info btn-sm ml-3' if current_user.admin %>
     </h3>
   </div>
 

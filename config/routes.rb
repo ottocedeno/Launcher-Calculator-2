@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   resource :sessions, only: [:new, :create]
   resources :users, only: [:new, :create]
   resources :rockets, only: [:index]
+  resource :admin do
+    resources :rockets, only: [:new]
+  end
 end
