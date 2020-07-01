@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <%= render partial: 'sessions/head'%>
+  <%= render partial: 'sessions/metadata'%>
 
   <body class="bg-light">
     <%= render partial: 'static/top_nav' %>
-    <%= yield %>
+
+    <div class="container-fluid">
+      <div class="row">
+        <%= render partial: 'static/side_nav' %>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <%= yield %>
+        </main>
+      </div>
+    </div>
   </body>
 </html>
