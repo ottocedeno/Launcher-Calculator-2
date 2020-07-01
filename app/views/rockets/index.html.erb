@@ -1,2 +1,22 @@
-<h1>Rockets#index</h1>
-<p>Find me in app/views/rockets/index.html.erb</p>
+<section class="m-4">
+  <h1 class="display-3">Rockets</h1>
+  <p>Welcome to the rockets page.  All rockets listed are either flight proven or in active development.</p>
+  <p><strong>Note:</strong> during our beta program, only <span class="text-info">admins</span> will have the ability to create new conceptual rockets or edit existing ones.</p>
+  <div class="mt-5 mb-4">
+    <h3>Available Rockets
+      <%= link_to 'Create New Rocket', '/', class: 'btn btn-outline-info btn-sm ml-3' if current_user.admin %>
+    </h3>
+  </div>
+
+
+  <% @rockets.each do |rocket| %>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= rocket.name %></h5>
+        <h6 class="card-subtitle mb-4 text-muted"><%= rocket.description %></h6>
+        <%= link_to('Start Mission', '/', class: 'btn btn-primary btn-sm mr-1', style: 'width:48%') %>
+        <%= link_to('Edit Rocket', '/', class: 'btn btn-outline-info btn-sm', style: 'width:48%') if current_user.admin %>
+      </div>
+    </div>
+  <% end %>
+</section>
