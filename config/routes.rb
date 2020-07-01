@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy', as: 'logout'
   get '/signup' => 'users#new', as: 'signup'
   get '/about' => 'static#about', as: 'about'
-  resources :sessions, only: [:new, :create]
-  resources :users, only: [:new, :create, :index]
+  resource :sessions, only: [:new, :create]
+  resources :users, only: [:new, :create]
+  resources :rockets, only: [:index]
 end
