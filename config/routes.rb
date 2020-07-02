@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/about' => 'static#about', as: 'about'
   resource :sessions, only: [:new, :create]
   resources :users, only: [:new, :create]
-  resources :rockets, only: [:index]
+  resources :rockets, only: [:index, :create]
   resource :admin do
     resources :rockets, only: [:new]
   end
