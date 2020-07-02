@@ -42,3 +42,8 @@
   font-size: 0.75rem;
   text-transform: uppercase;
 }
+
+.card:hover {
+  border-color: #007bff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
