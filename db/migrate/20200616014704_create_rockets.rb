@@ -15,10 +15,10 @@ class CreateRockets < ActiveRecord::Migration[6.0]
       t.float :max_rocket_body_diameter
       t.integer :fairing_mass
       t.integer :assumed_payload_mass
-      t.float :second_stage_to_lift_off_mass_ratio
-      t.float :transfer_orbit_stage_to_lift_off_mass_ratio
+      t.float :second_stage_to_rocket_mass_ratio
+      t.float :transfer_orbit_stage_to_rocket_mass_ratio
       t.float :first_stage_dry_to_wet_mass_ratio
-      t.float :second_stage_try_to_wet_mass_ratio
+      t.float :second_stage_dry_to_wet_mass_ratio
       t.float :transfer_orbit_stage_dry_to_wet_mass_ratio
       t.float :first_stage_unused_propellant
       t.float :second_stage_unused_propellant
