@@ -1,2 +1,4 @@
-<h1>Rockets#new</h1>
-<p>Find me in app/views/rockets/new.html.erb</p>
+<section class="m-4">
+  <h1 class="display-3">Build a Rocket</h1>
+  <%= render partial: 'rocket_form', locals: {rocket: @rocket, fuels: @fuels, cycles: @cycles} %>
+</section>

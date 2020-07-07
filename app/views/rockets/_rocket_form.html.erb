@@ -1,0 +1,86 @@
+<%= form_for(rocket) do |f| %>
+
+  <%= render partial: 'sessions/form_errors.html.erb', locals: {object: rocket} %>
+
+  <div class="form-group">
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :description, class: 'form-control', placeholder: 'Description' %>
+  </div>
+
+  <%# Fuel / Cycle drop downs %>
+  <div class="form-group">
+    <%= f.label :first_stage %>
+    <%= f.select(:first_stage_fuel, fuels, { prompt: 'Fuel'}, {class: 'form-control'})%>
+    <%= f.select(:first_stage_cycle, cycles, { prompt: 'Cycles'}, {class: 'form-control'})%>
+  </div>
+  <div class="form-group">
+    <%= f.label :second_stage %>
+    <%= f.select(:second_stage_fuel, fuels, { prompt: 'Fuel'}, {class: 'form-control'})%>
+    <%= f.select(:second_stage_cycle, cycles, { prompt: 'Cycles'}, {class: 'form-control'})%>
+  </div>
+  <div class="form-group">
+    <%= f.label :third_stage %>
+    <%= f.select(:third_stage_fuel, fuels, { prompt: 'Fuel'}, {class: 'form-control'})%>
+    <%= f.select(:third_stage_cycle, cycles, { prompt: 'Cycles'}, {class: 'form-control'})%>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :thrust_to_weight_ratio, class: 'form-control', placeholder: 'Thrust to Weight Ratio' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :rocket_mass, class: 'form-control', placeholder: 'Rocket Mass (excluding payload & fairing)' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :max_rocket_body_diameter, class: 'form-control', placeholder: 'Max Rocket Body Diameter' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :fairing_mass, class: 'form-control', placeholder: 'Fairing Mass' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :assumed_payload_mass, class: 'form-control', placeholder: 'Assumed Payload Mass' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :second_stage_to_rocket_mass_ratio, class: 'form-control', placeholder: 'Second Stage to Rocket Mass Ratio' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :transfer_orbit_stage_to_rocket_mass_ratio, class: 'form-control', placeholder: 'Transfer Orbit Stage to Rocket Mass Ratio' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :first_stage_dry_to_wet_mass_ratio, class: 'form-control', placeholder: 'First Stage Dry to Wet Mass Ratio' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :second_stage_dry_to_wet_mass_ratio, class: 'form-control', placeholder: 'Second Stage Dry to Wet Mass Ratio' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :transfer_orbit_stage_dry_to_wet_mass_ratio, class: 'form-control', placeholder: 'Transfer Orbit Stage Dry to Wet Mass Ratio' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :first_stage_unused_propellant, class: 'form-control', placeholder: 'First Stage Unused Propellant' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :second_stage_unused_propellant, class: 'form-control', placeholder: 'Second Stage Unused Propellant' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :transfer_orbit_stage_unused_propellant, class: 'form-control', placeholder: 'Transfer Orbit Stage Unused Propellant' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :first_stage_isp, class: 'form-control', placeholder: 'First Stage Isp (start level)' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :first_stage_isp_vacuum, class: 'form-control', placeholder: 'First Stage Isp Vacuum' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :second_stage_isp, class: 'form-control', placeholder: 'Second Stage Isp' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :transfer_orbit_stage_isp, class: 'form-control', placeholder: 'Transfer Orbit Stage Isp' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :specific_impulse_variation, class: 'form-control', placeholder: 'Specific Impulse Variation' %>
+  </div>
+
+
+  <%= f.submit 'Create Rocket', class: 'btn btn-primary' %>
+<% end %>
