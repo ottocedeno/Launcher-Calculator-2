@@ -1,5 +1,8 @@
 <section class="m-4">
-  <h1 class="display-3"><%= @rocket.name %></h1>
+  <h1 class="display-3">
+    <%= @rocket.name %>
+    <%= link_to 'delete', admin_rocket_path(@rocket), method: :delete, class: 'btn btn-outline-danger btn-sm' if current_user.admin %>
+  </h1>
   <p class="lead"><%= @rocket.description %></p>
 
   <table class="table table-sm table-bordered">

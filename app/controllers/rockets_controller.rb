@@ -1,5 +1,5 @@
 class RocketsController < ApplicationController
-  before_action :set_rocket, only: [:show, :new, :edit, :update]
+  before_action :set_rocket, only: [:show, :new, :edit, :update, :destroy]
   def index
     @rockets = Rocket.all
   end
@@ -36,6 +36,8 @@ class RocketsController < ApplicationController
   end
 
   def destroy
+    @rocket.destroy
+    redirect_to rockets_path
   end
 
   private
