@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resource :sessions, only: [:new, :create]
   resources :users, only: [:new, :create]
   resources :rockets, only: [:index, :create, :show]
+  patch '/rockets/:id' => 'rockets#update'
   resource :admin do
     resources :rockets, only: [:new, :edit]
   end
