@@ -1,0 +1,24 @@
+<section class="m-4">
+  <h1 class="display-3">Spaceports</h1>
+  <p>Welcome to the spaceports page.  All spaceports listed are active sites.</p>
+  <p><strong>Note:</strong> during our beta program, only <span class="text-info">admins</span> will have the ability to create or modify spaceports.</p>
+  <div class="mt-5 mb-4">
+    <h3>Available Spaceports
+      <%= link_to 'Create New Spaceport', '/', class: 'btn btn-outline-info btn-sm ml-3' if current_user.admin %>
+    </h3>
+  </div>
+
+
+  <% @spaceports.each do |spaceport| %>
+    <div class="card mb-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= spaceport.name %></h5>
+        <h6 class="card-subtitle mb-4 text-muted">Launch Point Altitude: <%= spaceport.launch_point_altitude %>km</h6>
+        <%= link_to('Edit spaceport', '/', class: 'btn btn-outline-info btn-block btn-sm') if current_user.admin %>
+        <%= link_to('View spaceport', '/', class: 'btn btn-outline-primary btn-block btn-sm') %>
+        <%= link_to('Start Mission', '/', class: 'btn btn-primary btn-block') %>
+        
+      </div>
+    </div>
+  <% end %>
+</section>
