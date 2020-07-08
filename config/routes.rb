@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :rockets, only: [:index, :create, :show]
   resource :admin do
-    resources :rockets, only: [:new]
+    resources :rockets, only: [:new, :edit]
   end
 end
