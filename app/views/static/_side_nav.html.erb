@@ -2,7 +2,7 @@
   <div class="sidebar-sticky pt-3">
     
     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-      @<%= current_user.username %>
+      welcome, <%= current_user.username %>
     </h6>
     <ul class="nav flex-column">
       <li class="nav-item">
@@ -18,8 +18,6 @@
         <%= link_to 'Orbits', '/', class: 'nav-link' %>
       </li>
     </ul>
-
-    <%= render partial: 'static/admin_panel' if current_user.admin %>
 
     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
       Info
