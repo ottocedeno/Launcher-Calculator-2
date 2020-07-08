@@ -1,14 +1,13 @@
 class RocketsController < ApplicationController
+  before_action :set_rocket, only: [:show, :new, :edit, :update]
   def index
     @rockets = Rocket.all
   end
 
   def show
-    @rocket = Rocket.find(params[:id])
   end
 
   def new
-    @rocket = Rocket.new
     load_stages
   end
 
@@ -24,15 +23,27 @@ class RocketsController < ApplicationController
   end
 
   def edit
+    load_stages
   end
 
   def update
+    if @rocket.update(rocket_params)
+      redirect_to rocket_path(@rocket)
+    else
+      load_stages
+      render :edit
+    end
   end
 
   def destroy
   end
 
   private
+
+  def set_rocket
+    @rocket = (Rocket.find_by(id: params[:id]) || Rocket.new)
+  end
+
   def rocket_params
     params.require(:rocket).permit(
       :name,
