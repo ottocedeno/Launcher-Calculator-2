@@ -1,8 +1,11 @@
 class SpaceportsController < ApplicationController
-  # before_action :set_spaceport, only: []
+  before_action :set_spaceport, only: [:show]
 
   def index
     @spaceports = Spaceport.all
+  end
+
+  def show
   end
 
   private
