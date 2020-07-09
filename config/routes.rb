@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   patch '/rockets/:id' => 'rockets#update'
 
   resources :spaceports, only: [:index, :create, :show]
-  
+  patch '/spaceports/:id' => 'spaceports#update'
+
   resource :admin do
     resources :rockets, only: [:new, :edit, :destroy]
     resources :spaceports, only: [:new, :edit, :destroy]
