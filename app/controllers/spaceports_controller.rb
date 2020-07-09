@@ -1,5 +1,5 @@
 class SpaceportsController < ApplicationController
-  before_action :set_spaceport, only: [:show, :new]
+  before_action :set_spaceport, only: [:show, :new, :edit, :update]
 
   def index
     @spaceports = Spaceport.all
@@ -17,6 +17,17 @@ class SpaceportsController < ApplicationController
       redirect_to spaceport_path(@spaceport)
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @spaceport.update(spaceport_params)
+      redirect_to spaceport_path(@spaceport)
+    else
+      render :edit
     end
   end
 
