@@ -1,0 +1,22 @@
+<%= form_for(spaceport) do |f| %>
+
+  <%= render partial: 'sessions/form_errors.html.erb', locals: {object: spaceport} %>
+
+  <div class="form-group">
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :launch_point_altitude, class: 'form-control', placeholder: 'Launch Point Altitude' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :spaceport_latitude, class: 'form-control', placeholder: 'Spaceport Latitude' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :launch_azimuth, class: 'form-control', placeholder: 'Launch Azimuth' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :earth_rotation_velocity, class: 'form-control', placeholder: 'Earth Rotation Velocity' %>
+  </div>
+
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
