@@ -1,5 +1,6 @@
 class OrbitsController < ApplicationController
   def index
+    @orbits = Orbit.all
   end
 
   def new
