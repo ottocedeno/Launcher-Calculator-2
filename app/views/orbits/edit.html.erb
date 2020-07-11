@@ -1,2 +1,4 @@
-<h1>Orbits#edit</h1>
-<p>Find me in app/views/orbits/edit.html.erb</p>
+<section class="m-4">
+  <h1 class="display-3">Editing <%= @orbit.name %></h1>
+  <%= render partial: 'orbit_form', locals: {orbit: @orbit} %>
+</section>
