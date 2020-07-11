@@ -1,0 +1,32 @@
+<%= form_for(orbit) do |f| %>
+
+  <%= render partial: 'sessions/form_errors.html.erb', locals: {object: orbit} %>
+
+  <div class="form-group">
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :quick_description, class: 'form-control', placeholder: 'Quick Description' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :orbit_perigee, class: 'form-control', placeholder: 'Orbit Perigee' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :orbit_apogee, class: 'form-control', placeholder: 'Orbit Apogee' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :orbit_inclination, class: 'form-control', placeholder: 'Orbit Inclination' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :orbital_period, class: 'form-control', placeholder: 'Orbital Period' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :delta_v, class: 'form-control', placeholder: 'Delta-v for target orbit' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :extra_velocity_to_planets, class: 'form-control', placeholder: 'Extra Velocity Planetary Flights' %>
+  </div>
+
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

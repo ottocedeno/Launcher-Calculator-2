@@ -4,7 +4,7 @@
   <p><strong>Note:</strong> during our beta program, only <span class="text-info">admins</span> will have the ability to create/edit orbits.</p>
   <div class="mt-5 mb-4">
     <h3>Available Orbits
-      <%= link_to 'Create New Orbit', '/', class: 'btn btn-outline-info btn-sm ml-3' if current_user.admin %>
+      <%= link_to 'Create New Orbit', new_admin_orbit_path, class: 'btn btn-outline-info btn-sm ml-3' if current_user.admin %>
     </h3>
   </div>
 
