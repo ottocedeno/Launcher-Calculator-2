@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'missions/index'
+  get 'missions/show'
+  get 'missions/new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # Login Flow
@@ -10,6 +13,10 @@ Rails.application.routes.draw do
   get '/about' => 'static#about', as: 'about'
   resource :sessions, only: [:new, :create]
   resources :users, only: [:new, :create]
+
+  resources :users do
+    resources :missions, only: [:index]
+  end
 
   # Main Resources
   resources :rockets, only: [:index, :create, :show]
