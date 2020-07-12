@@ -1,6 +1,10 @@
 class MissionsController < ApplicationController
   def index
-    @missions = Mission.all
+    if params[:user_id]
+      @missions = Mission.where(id: params[:user_id])
+    else
+      @missions = Mission.all
+    end
   end
 
   def show

@@ -8,7 +8,7 @@
     </h3>
   </div>
 
-  <% current_user_missions(@missions).each do |mission| %>
+  <% @missions.each do |mission| %>
     <div class="card mb-3" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title"><%= mission.name %></h5>
