@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'missions/index'
-  get 'missions/show'
-  get 'missions/new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # Login Flow
@@ -15,7 +12,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   resources :users do
-    resources :missions, only: [:index]
+    resources :missions, only: [:index, :show, :new]
   end
 
   # Main Resources
@@ -27,6 +24,8 @@ Rails.application.routes.draw do
 
   resources :orbits, only: [:index, :create, :show]
   patch '/orbits/:id' => 'orbits#update'
+
+  resources :missions, only: [:create]
 
   resource :admin do
     resources :rockets, only: [:new, :edit, :destroy]
