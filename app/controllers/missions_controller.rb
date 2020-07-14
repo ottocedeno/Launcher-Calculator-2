@@ -1,5 +1,6 @@
 class MissionsController < ApplicationController
-  before_action :set_mission, only: [:new, :edit]
+  before_action :set_mission, only: [:new, :edit, :update]
+
   def index
     if params[:user_id]
       @missions = Mission.where(user_id: params[:user_id])
@@ -24,6 +25,19 @@ class MissionsController < ApplicationController
     else
       load_mission_options
       render :new
+    end
+  end
+
+  def edit
+    load_mission_options
+  end
+
+  def update
+    if @mission.update(mission_params)
+      redirect_to user_mission_path(@mission, @mission.user_id)
+    else
+      load_mission_options
+      render :edit
     end
   end
 

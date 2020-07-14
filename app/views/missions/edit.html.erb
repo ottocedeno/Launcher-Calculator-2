@@ -1,0 +1,4 @@
+<section class="m-4">
+  <h1 class="display-3">Editing <%= @mission.name %></h1>
+  <%= render partial: 'mission_form', locals: { mission: @mission, rockets: @rockets, spaceports: @spaceports, orbits: @orbits } %>
+</section>
