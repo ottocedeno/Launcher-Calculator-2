@@ -1,11 +1,11 @@
-<% if @missions.empty? %>
+<% if missions.empty? %>
   <p>You do not have any missions yet. Start a new mission today!</p>
 <% else %>
-  <% @missions.each do |mission| %>
+  <% missions.each do |mission| %>
     <div class="card mb-3" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title"><%= mission.name %></h5>
-        <%= link_to('Edit Mission', '/', class: 'btn btn-outline-primary btn-block btn-sm') %>
+        <%= link_to('Edit Mission', edit_user_mission_path(mission.user_id, mission), class: 'btn btn-outline-primary btn-block btn-sm') %>
         <%= link_to('View Mission Results', '/', class: 'btn btn-primary btn-block') %>
       </div>
     </div>
