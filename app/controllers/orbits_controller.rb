@@ -1,5 +1,5 @@
 class OrbitsController < ApplicationController
-  before_action :set_orbit, only: [:show, :new, :edit, :update]
+  before_action :set_orbit, only: [:show, :new, :edit, :update, :destroy]
 
   def index
     @orbits = Orbit.all
@@ -29,6 +29,11 @@ class OrbitsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @orbit.destroy
+    redirect_to orbits_path
   end
 
   private
