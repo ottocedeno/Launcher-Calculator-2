@@ -1,4 +1,5 @@
 class MissionsController < ApplicationController
+  before_action :set_mission, only: [:new, :edit]
   def index
     if params[:user_id]
       @missions = Mission.where(user_id: params[:user_id])
@@ -11,7 +12,6 @@ class MissionsController < ApplicationController
   end
 
   def new
-    @mission = Mission.new
     load_mission_options
   end
 
@@ -30,6 +30,10 @@ class MissionsController < ApplicationController
   private
   def mission_params
     params.require(:mission).permit(:name, :user_id, :rocket_id, :spaceport_id, :orbit_id)
+  end
+
+  def set_mission
+    @mission = (Mission.find_by(id: params[:id]) || Mission.new)
   end
 
   def load_mission_options
