@@ -1,0 +1,26 @@
+<%= form_for(mission) do |f| %>
+  <%= render partial: 'sessions/form_errors.html.erb', locals: {object: mission} %>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <div class="form-group">
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :rocket_id %>
+    <%= f.select(:rocket_id, rockets.map {|r| [r.name, r.id] }, { prompt: 'Select a Rocket'}, {class: 'form-control'})%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :spaceport_id %>
+    <%= f.select(:spaceport_id, spaceports.map {|s| [s.name, s.id] }, { prompt: 'Select a Spaceport'}, {class: 'form-control'})%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :orbit_id %>
+    <%= f.select(:orbit_id, orbits.map {|o| [o.name, o.id] }, { prompt: 'Select an Orbit'}, {class: 'form-control'})%>
+  </div>
+
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

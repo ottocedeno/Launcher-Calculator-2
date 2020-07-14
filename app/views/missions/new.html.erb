@@ -1,2 +1,4 @@
-<h1>Missions#new</h1>
-<p>Find me in app/views/missions/new.html.erb</p>
+<section class="m-4">
+  <h1 class="display-3">Start a Mission</h1>
+  <%= render partial: 'mission_form', locals: { mission: @mission, rockets: @rockets, spaceports: @spaceports, orbits: @orbits } %>
+</section>
