@@ -11,11 +11,13 @@ Rails.application.routes.draw do
   resource :sessions, only: [:new, :create]
   resources :users, only: [:new, :create]
 
+  # Main Resources
   resources :users do
     resources :missions, only: [:index, :show, :new, :edit]
   end
 
-  # Main Resources
+  resources :missions, only: [:create, :update, :destroy]
+
   resources :rockets, only: [:index, :create, :show]
   patch '/rockets/:id' => 'rockets#update'
 
@@ -25,8 +27,7 @@ Rails.application.routes.draw do
   resources :orbits, only: [:index, :create, :show]
   patch '/orbits/:id' => 'orbits#update'
 
-  resources :missions, only: [:create, :update]
-
+  # Admin only routes
   resource :admin do
     resources :rockets, only: [:new, :edit, :destroy]
     resources :spaceports, only: [:new, :edit, :destroy]
