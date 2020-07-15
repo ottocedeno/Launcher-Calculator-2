@@ -1,5 +1,5 @@
 class MissionsController < ApplicationController
-  before_action :set_mission, only: [:new, :edit, :update]
+  before_action :set_mission, only: [:new, :show, :edit, :update]
 
   def index
     if params[:user_id]
@@ -19,9 +19,9 @@ class MissionsController < ApplicationController
   def create
     @mission = Mission.new(mission_params)
     if @mission.valid?
-      #@mission.mission_result = MissionResult.calculate
+      #call some method on mission to calculate the results
       @mission.save
-      redirect_to user_mission_path(@mission, @mission.user_id)
+      redirect_to user_mission_path(@mission.user_id, @mission)
     else
       load_mission_options
       render :new
