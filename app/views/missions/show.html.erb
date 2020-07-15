@@ -1,19 +1,18 @@
 <section class="m-4">
   <h1 class="display-3">
     <%= @mission.name %>
-    <%= link_to 'delete', '/', method: :delete, class: 'btn btn-outline-danger btn-sm' %>
+    <%= link_to 'delete', @mission, method: :delete, class: 'btn btn-outline-danger btn-sm' %>
   </h1>
-  <h4 class="lead"><%= @mission.rocket.name %> launched from <%= @mission.spaceport.name %> to <%= @mission.orbit.name %></p>
+  <h4 class="lead"><%= @mission.rocket.name %> launched from <%= @mission.spaceport.name %> to <%= @mission.orbit.name %></h4>
+  <h4 class="lead">by @<%= @mission.user.username %></h4>
 
-  <h4>Mission Status
+  <h4 class="mt-5">Mission Status
     <% if @mission.success %>
       <span class="badge badge-success text-uppercase">Success</span>
     <% else %>
       <span class="badge badge-danger text-uppercase">Failure</span>
     <% end %>
   </h4>
-
-
   <table class="table table-sm table-bordered">
     <thead class="thead-dark">
       <tr>
@@ -26,10 +25,13 @@
         <% unless ommitted_mission_keys(key) %>
           <tr>
             <td><%= key.humanize %></td>
-            <td><%= value %> kg</td>
+            <td><%= value %></td>
           </tr>
         <% end %>
       <% end %>
     </tbody>
   </table>
+
+  <h4 class="mt-4">Rocket: <%= @mission.rocket.name %></h4>
+  <%= render partial: 'rockets/rocket_data_table', locals: {rocket: @mission.rocket} %>
 </section>
