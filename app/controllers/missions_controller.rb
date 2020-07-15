@@ -1,5 +1,5 @@
 class MissionsController < ApplicationController
-  before_action :set_mission, only: [:new, :show, :edit, :update]
+  before_action :set_mission, only: [:new, :show, :edit, :update, :destroy]
 
   def index
     if params[:user_id]
@@ -39,6 +39,11 @@ class MissionsController < ApplicationController
       load_mission_options
       render :edit
     end
+  end
+
+  def destroy
+    @mission.destroy
+    redirect_to user_missions_path(current_user)
   end
 
   private
