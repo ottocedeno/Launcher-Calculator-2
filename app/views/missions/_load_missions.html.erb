@@ -6,7 +6,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= mission.name %></h5>
         <%= link_to('Edit Mission', edit_user_mission_path(mission.user_id, mission), class: 'btn btn-outline-primary btn-block btn-sm') %>
-        <%= link_to('View Mission Results', '/', class: 'btn btn-primary btn-block') %>
+        <%= link_to('View Mission Results', user_mission_path(mission.user_id, mission), class: 'btn btn-primary btn-block') %>
       </div>
     </div>
   <% end %>
