@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-otto = {
-  username: 'ottocedeno',
-  first_name: 'Otto',
-  last_name: 'Cedeno',
-  password: 'donkey',
+neil = {
+  username: 'firstman',
+  first_name: 'Neil',
+  last_name: 'Armstrong',
+  password: 'moonshot',
   admin: true
 }
 
@@ -31,11 +31,11 @@ saturn_five = {
   max_rocket_body_diameter: 10.1,
   fairing_mass: 8000,
   assumed_payload_mass: 48600,
-  second_stage_to_lift_off_mass_ratio: 21.284,
-  transfer_orbit_stage_to_lift_off_mass_ratio: 4.228,
+  second_stage_to_rocket_mass_ratio: 21.284,
+  transfer_orbit_stage_to_rocket_mass_ratio: 4.228,
 
   first_stage_dry_to_wet_mass_ratio: 5.677,
-  second_stage_try_to_wet_mass_ratio: 8.081,
+  second_stage_dry_to_wet_mass_ratio: 8.081,
   transfer_orbit_stage_dry_to_wet_mass_ratio: 10.976,
   first_stage_unused_propellant: 2.6,
   second_stage_unused_propellant: 2.0,
@@ -67,7 +67,7 @@ leo = {
   extra_velocity_to_planets: 0
 }
 
-user = User.create(otto)
+user = User.create(neil)
 rocket = Rocket.create(saturn_five)
 spaceport = Spaceport.create(cape_canaveral)
 orbit = Orbit.create(leo)
@@ -78,5 +78,9 @@ mission = Mission.create(
   rocket: rocket,
   spaceport: spaceport,
   orbit: orbit,
-  mission_result: MissionResult.new
+  success: true,
+  payload_mass: 144133,
+  payload_to_lift_off_mass_ratio: 4.74,
+  payload_change: 298.6,
+  aggression_index: 6.3
 )
