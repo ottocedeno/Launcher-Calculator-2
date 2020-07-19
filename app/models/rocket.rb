@@ -20,6 +20,8 @@ class Rocket < ApplicationRecord
   validates :max_rocket_body_diameter, numericality: {greater_than_or_equal_to: 0}
   validates :fairing_mass, presence: true
   validates :fairing_mass, numericality: {greater_than_or_equal_to: 0}
+  validates :fairing_jettison_velocity, presence: true
+  validates :fairing_jettison_velocity, numericality: {greater_than_or_equal_to: 0}
   validates :assumed_payload_mass, presence: true
   validates :assumed_payload_mass, numericality: {greater_than_or_equal_to: 0}
   validates :second_stage_to_rocket_mass_ratio, presence: true

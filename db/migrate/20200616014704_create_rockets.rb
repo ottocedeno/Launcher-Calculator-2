@@ -14,6 +14,7 @@ class CreateRockets < ActiveRecord::Migration[6.0]
       t.integer :rocket_mass
       t.float :max_rocket_body_diameter
       t.integer :fairing_mass
+      t.integer :fairing_jettison_velocity
       t.integer :assumed_payload_mass
       t.float :second_stage_to_rocket_mass_ratio
       t.float :transfer_orbit_stage_to_rocket_mass_ratio
