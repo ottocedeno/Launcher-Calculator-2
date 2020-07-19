@@ -54,11 +54,11 @@ class Mission < ApplicationRecord
   end
 
   def starting_point_altitude_orbital_velocity
-    Math.sqrt(gravity_const/(earth_radius + starting_point_altitude))
+    Math.sqrt(MyMath.gravity_constant/(MyMath.earth_radius + starting_point_altitude))
   end
 
   def absolute_orbital_velocity
-    Math.sqrt(gravity_const/(earth_radius + orbit_perigee))
+    Math.sqrt(MyMath.gravity_constant/(MyMath.earth_radius + orbit_perigee))
   end
 
   def orbit_apogee_zero?
@@ -141,7 +141,7 @@ class Mission < ApplicationRecord
     if orbit_apogee_zero?
       vsp_for_circular_orbit + extra_speed_for_flight_to_the_planets
     else
-      vsp_for_circular_orbit + extra_speed_for_flight_to_the_planets + absolute_orbital_velocity * (absolute_orbital_velocity/Math.sqrt(0.5 * (absolute_orbital_velocity * absolute_orbital_velocity + gravity_const/(earth_radius + orbit_apogee))) - 1)
+      vsp_for_circular_orbit + extra_speed_for_flight_to_the_planets + absolute_orbital_velocity * (absolute_orbital_velocity/Math.sqrt(0.5 * (absolute_orbital_velocity * absolute_orbital_velocity + MyMath.gravity_constant/(MyMath.earth_radius + orbit_apogee))) - 1)
     end
   end
 
