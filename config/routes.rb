@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   end
 
   resources :missions, only: [:create, :update, :destroy]
-
+  get 'missions/successful' => 'missions#successful_missions', as: 'successful_missions'
+  
   resources :rockets, only: [:index, :create, :show]
   patch '/rockets/:id' => 'rockets#update'
 
