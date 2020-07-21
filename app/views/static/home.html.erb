@@ -9,6 +9,6 @@
   </ul>
 
   <h4 class="mt-4">Mission Options</h4>
-  <%= link_to 'Start a New Mission', '/', class: 'btn btn-primary btn-sm ml-3' %>
+  <%= link_to 'Start a New Mission', new_user_mission_path(current_user), class: 'btn btn-primary btn-sm ml-3' %>
   <%= link_to 'See Past Successful Missions', successful_missions_path, class: 'btn btn-outline-primary btn-sm ml-3' %>
 </section>
