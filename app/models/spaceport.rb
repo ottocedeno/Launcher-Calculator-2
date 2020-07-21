@@ -1,5 +1,8 @@
 class Spaceport < ApplicationRecord
   has_many :missions
+  has_many :users, through: :missions
+  has_many :rockets, through: :missions
+  has_many :orbits, through: :missions
 
   # Validations
   validates :name, presence: true
