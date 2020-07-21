@@ -9,13 +9,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
+    
     if @user.valid?
       @user.save
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      render 'new'
+      render :new, layout: 'onboarding'
     end
   end
 

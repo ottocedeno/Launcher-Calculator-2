@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_user
-    @user = User.new
+    @user = (current_user || User.new)
   end
 
   def redirect_home_if_logged_in

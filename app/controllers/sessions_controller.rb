@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
         successful_login
       else
         login_error
-        render 'new'
+        render 'new', layout: 'onboarding'
       end
     end
   end

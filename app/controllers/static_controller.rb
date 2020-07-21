@@ -1,6 +1,7 @@
 class StaticController < ApplicationController
+  before_action :set_user, only: [:home]
+  
   def home
-    @user = User.find(session[:user_id])
   end
 
   def about
