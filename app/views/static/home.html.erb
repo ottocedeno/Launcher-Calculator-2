@@ -1,3 +1,14 @@
-<h1>Welcome back <span class="text-primary">@<%= @user.username %></span></h1>
+<section class="m-4">
+  <h1 class="display-4">Welcome @<%= current_user.username %></h1>
 
+  <h4 class="mt-4">Available resources for your missions</h4>
+  <ul>
+    <li><%= link_to 'All Rockets', rockets_path %></li>
+    <li><%= link_to 'All Spaceports', spaceports_path %></li>
+    <li><%= link_to 'All Orbits', orbits_path %></li>
+  </ul>
 
+  <h4 class="mt-4">Mission Options</h4>
+  <%= link_to 'Start a New Mission', '/', class: 'btn btn-primary btn-sm ml-3' %>
+  <%= link_to 'See Past Successful Missions', successful_missions_path, class: 'btn btn-outline-primary btn-sm ml-3' %>
+</section>
