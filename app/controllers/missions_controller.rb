@@ -19,8 +19,7 @@ class MissionsController < ApplicationController
   def create
     @mission = Mission.new(mission_params)
     if @mission.valid?
-      #call some method on mission to calculate the results
-      @mission.save
+      @mission.calculate
       redirect_to user_mission_path(@mission.user_id, @mission)
     else
       load_mission_options
@@ -34,6 +33,7 @@ class MissionsController < ApplicationController
 
   def update
     if @mission.update(mission_params)
+      @mission.calculate
       redirect_to user_mission_path(@mission, @mission.user_id)
     else
       load_mission_options
@@ -44,6 +44,12 @@ class MissionsController < ApplicationController
   def destroy
     @mission.destroy
     redirect_to user_missions_path(current_user)
+  end
+
+  # NON CRUD ACTIONS
+
+  def successful_missions
+    @missions = Mission.all_successful_missions
   end
 
   private
