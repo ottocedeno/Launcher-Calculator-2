@@ -13,7 +13,7 @@ class MissionsController < ApplicationController
   end
 
   def new
-    load_mission_options
+    set_mission_options
   end
 
   def create
@@ -22,13 +22,13 @@ class MissionsController < ApplicationController
       @mission.calculate
       redirect_to user_mission_path(@mission.user_id, @mission)
     else
-      load_mission_options
+      set_mission_options
       render :new
     end
   end
 
   def edit
-    load_mission_options
+    set_mission_options
   end
 
   def update
@@ -36,7 +36,7 @@ class MissionsController < ApplicationController
       @mission.calculate
       redirect_to user_mission_path(@mission, @mission.user_id)
     else
-      load_mission_options
+      set_mission_options
       render :edit
     end
   end
@@ -47,7 +47,6 @@ class MissionsController < ApplicationController
   end
 
   # NON CRUD ACTIONS
-
   def successful_missions
     @missions = Mission.all_successful_missions
   end
@@ -61,7 +60,7 @@ class MissionsController < ApplicationController
     @mission = (Mission.find_by(id: params[:id]) || Mission.new)
   end
 
-  def load_mission_options
+  def set_mission_options
     @rockets = Rocket.all
     @spaceports = Spaceport.all
     @orbits = Orbit.all

@@ -1,5 +1,7 @@
 class RocketsController < ApplicationController
+  before_action :restrict_to_admin, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_rocket, only: [:show, :new, :edit, :update, :destroy]
+
   def index
     @rockets = Rocket.all
   end
@@ -8,7 +10,7 @@ class RocketsController < ApplicationController
   end
 
   def new
-    load_stages
+    set_stages
   end
 
   def create
@@ -17,20 +19,20 @@ class RocketsController < ApplicationController
       @rocket.save
       redirect_to rocket_path(@rocket)
     else
-      load_stages
+      set_stages
       render :new
     end
   end
 
   def edit
-    load_stages
+    set_stages
   end
 
   def update
     if @rocket.update(rocket_params)
       redirect_to rocket_path(@rocket)
     else
-      load_stages
+      set_stages
       render :edit
     end
   end
@@ -78,7 +80,7 @@ class RocketsController < ApplicationController
     )
   end
 
-  def load_stages
+  def set_stages
     @fuels = Stage.fuel.values
     @cycles = Stage.cycle.values
   end
