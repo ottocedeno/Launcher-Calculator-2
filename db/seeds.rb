@@ -30,6 +30,7 @@ saturn_five = {
   rocket_mass: 2909200,
   max_rocket_body_diameter: 10.1,
   fairing_mass: 8000,
+  fairing_jettison_velocity: 3500,
   assumed_payload_mass: 48600,
   second_stage_to_rocket_mass_ratio: 21.284,
   transfer_orbit_stage_to_rocket_mass_ratio: 4.228,
@@ -81,6 +82,5 @@ mission = Mission.create(
   success: true,
   payload_mass: 144133,
   payload_to_lift_off_mass_ratio: 4.74,
-  payload_change: 298.6,
-  aggression_index: 6.3
+  payload_change: 298.6
 )
