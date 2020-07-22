@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  # Login Flow
+  #Home
   root 'static#home'
+
+  # Login/Signup Flow
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   get '/login' => 'sessions#new', as: 'login'
   get '/logout' => 'sessions#destroy', as: 'logout'
   get '/signup' => 'users#new', as: 'signup'
-  get '/about' => 'static#about', as: 'about'
   resource :sessions, only: [:new, :create]
   resources :users, only: [:new, :create]
 
@@ -34,4 +35,7 @@ Rails.application.routes.draw do
     resources :spaceports, only: [:new, :edit, :destroy]
     resources :orbits, only: [:new, :edit, :destroy]
   end
+
+  #Additional Routes
+  get '/about' => 'static#about', as: 'about'
 end
