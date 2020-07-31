@@ -63,6 +63,7 @@ class RocketsController < ApplicationController
       :rocket_mass,
       :max_rocket_body_diameter,
       :fairing_mass,
+      :fairing_jettison_velocity,
       :assumed_payload_mass,
       :second_stage_to_rocket_mass_ratio,
       :transfer_orbit_stage_to_rocket_mass_ratio,
