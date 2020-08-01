@@ -2,10 +2,11 @@ class MissionsController < ApplicationController
   before_action :set_mission, only: [:new, :show, :edit, :update, :destroy]
 
   def index
-    if params[:user_id]
-      @missions = Mission.where(user_id: params[:user_id])
+    if params[:user_id] && params[:user_id].to_i == current_user.id
+      @missions = current_user.missions
     else
-      @missions = Mission.all
+      #load error alert
+      redirect_to root_path
     end
   end
 

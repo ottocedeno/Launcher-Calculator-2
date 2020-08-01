@@ -7,9 +7,11 @@ class Mission < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
 
-  def self.all_successful_missions
-    self.where(success: true)
-  end
+  scope :all_successful_missions, -> {where(success: true)}
+
+  # def self.all_successful_missions
+  #   self.where(success: true)
+  # end
 
   def calculate
     update_payload_mass
